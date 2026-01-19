@@ -24,10 +24,11 @@ for(let num=1;num<=20;num=num+1)
 }
 
 //Print the multiplication table of 5.
-{
+// Faced on issue. While use {Table code}
+console.log("Multiplication table of 5")
     let table=5
     for(let i=1;i<=10;i=i+1)
     {
         console.log(table +" x "+ i + " = " + (table*i));
     }
-}
+
