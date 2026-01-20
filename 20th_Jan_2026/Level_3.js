@@ -5,7 +5,10 @@ for(let tc=1;tc<=5;tc++)
 }
 
 //Print all menu names stored as strings (simulate with numbers).
-
+for(let menu=1;menu<=5;menu++)
+{
+    console.log("Menu "+menu)
+}
 
 //Print retry attempts from 1 to 3.
 let retryAttempts = 0
