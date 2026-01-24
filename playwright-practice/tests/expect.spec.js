@@ -1,5 +1,6 @@
+//Day 3
 const {test, expect} = require ("@playwright/test")
-test.only ('Expect Assertions', async({page})=>
+test ('Expect Assertions', async({page})=>
 {
 await page.goto("https://nextgen-qa.radiusdirect.net/login");
 await page.waitForLoadState('networkidle');

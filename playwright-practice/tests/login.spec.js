@@ -1,3 +1,4 @@
+//Day 2
 const {test} = require('@playwright/test');
 test ( 'Open Browser', async({page})=>
 {
