@@ -6,8 +6,8 @@ test('Day 7 - Form validation with empty fields', async ({ page }) => {
   await page.goto('https://nextgen-qa.radiusdirect.net/auth/login');
 
   // Step 2: Click submit without entering data
-  await page.click('button[type="submit"]');
-
+  await page.getByRole('button', { name: 'Sign In' }).click();
+await page.pause();
   // Step 3: Capture all error messages
   const errorMessages = page.locator('.error-message');
 
@@ -20,7 +20,7 @@ test('Day 7 - Form validation with empty fields', async ({ page }) => {
     const text = await errorMessages.nth(i).textContent();
     console.log(`Error ${i + 1}:`, text.trim());
   }
-  
+
 /*for (let i = 0; i < count; i++) {
   console.log("Error " + (i + 1) + ": " + text.trim());
 }
