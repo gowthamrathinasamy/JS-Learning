@@ -22,8 +22,14 @@ test('Calendar', async ({page}) =>
     
     await page.locator("._currentYear_19vy6_44").click();
     await page.getByText(year).click();
-    await page.locator("_noBorderButton_19vy6_64").nth(Number(month)-1).click();
-    await page.getByText(date).click();
+    await page.locator("._dropupContent_19vy6_17 ._selectionGrid_19vy6_51 ._monthList_19vy6_56 ._noBorderButton_19vy6_64").nth(Number(month)-1).click();
+    await page.locator(".react-datepicker__month-container .react-datepicker__week .react-datepicker__day").getByText(date).nth(0).dblclick();
+    await page.getByRole('button', { name: 'Apply' }).click();
+    await page.waitForLoadState("networkidle");
+    await expect(page.getByText("No engagements data found")).toBeVisible();
+    //const engId = await page.locator("tr ._td_wow9g_119 ._dFlex_wow9g_303 ._redirectLink_wow9g_329").nth(0).getTextContent()
+    //console.log(engId);
+
 await page.pause();
 
 }
